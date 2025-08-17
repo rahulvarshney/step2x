@@ -8,8 +8,9 @@ function handler(_req: Request): Response {
 //    console.log(searchParams[0]);
 //        console.log(JSON.stringify(searchParams.entries));
 
+    return new Response(url.search);
 
-    return new Response(_req.url);
+//    return new Response(_req.url);
     //  return new Response("Hello, World!");
 }
 Deno.serve(handler);
