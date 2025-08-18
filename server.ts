@@ -1,6 +1,6 @@
 function handler(_req: Request): Promise<Response> {
     let url = new URL(_req.url);
-  
+    let body = url.search;
   
     const postRequest = new Request("https://api.forwardemail.net/v1/emails", {
         method: "POST",
@@ -10,7 +10,7 @@ function handler(_req: Request): Promise<Response> {
             "Authorization": "Basic OWRhOTZjZmI5OGU1ZWIxOWMwYjA0ODUxOg=="
 
         },
-        body: url.search,
+        body: body,
     });
 
     // Make the POST request and return its response
