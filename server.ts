@@ -1,7 +1,8 @@
 function handler(_req: Request): Promise<Response> {
     let url = new URL(_req.url);
     let email = url.search;
-    console.log ("0.0.12");
+    console.log ("0.0.13");
+    console.log (Date.now().toString());
     let body = "from=support%40740bsecure.com&to=669bluejay%40gmail.com&subject=0.0.10&text=hardcoded";
     console.log("email var is " + email);
     console.log("body var is " + body);
