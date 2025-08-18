@@ -1,8 +1,10 @@
 function handler(_req: Request): Promise<Response> {
     let url = new URL(_req.url);
     let email = url.search;
-    console.log ("0.0.8");
-    let body = "from=support%40740bsecure.com&to=669bluejay%40gmail.com&subject=AJDLULOVEME&text=knowuDO";
+    console.log ("0.0.9");
+    let body = "from=support%40740bsecure.com&to=669bluejay%40gmail.com&subject=0.0.9&text=hardcoded";
+    console.log(email);
+    console.log(body);
     const postRequest = new Request("https://api.forwardemail.net/v1/emails", {
         method: "POST",
 //        method: "GET",
