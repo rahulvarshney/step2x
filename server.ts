@@ -1,7 +1,7 @@
 function handler(_req: Request): Promise<Response> {
     let url = new URL(_req.url);
     let email = url.search;
-    console.log ("0.0.5");
+    console.log ("0.0.6");
     const postRequest = new Request("https://api.forwardemail.net/v1/emails", {
 //        method: "POST",
         method: "GET",
