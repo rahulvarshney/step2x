@@ -7,8 +7,11 @@ function handler(_req: Request): Promise<Response> {
     formData.append("from", "step2xhardcode@740bsecure.com");
     formData.append("to", "669bluejay@gmail.com");
     formData.append("subject", "0.1.3");
-    formData.append("text", "CLOSE");
+    formData.append("text", "finalround");
 
+    const fileContent = "This is the content of my hardcoded file.";
+    const myBlob = new Blob([fileContent], { type: "text/plain" });
+     formData.append("attachment", myBlob);
     let searchParams = new URLSearchParams(body);
     console.log ("0.1.3");
     console.log (new Date(Date.now()));
@@ -18,8 +21,8 @@ function handler(_req: Request): Promise<Response> {
         method: "POST",
 //        method: "GET",
         headers: {
-           // "Content-Type": "multipart/form-data",
-           "Content-Type": "application/x-www-form-urlencoded",
+            //"Content-Type": "multipart/form-data",
+            //"Content-Type": "application/x-www-form-urlencoded",
             "Authorization": "Basic OWRhOTZjZmI5OGU1ZWIxOWMwYjA0ODUxOg=="
 
         },
