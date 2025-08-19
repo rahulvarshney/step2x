@@ -8,7 +8,7 @@ function handler(_req: Request): Promise<Response> {
     formData.append("subject", "0.1.4");
     formData.append("text", "finalround");*/ 
 
-    const fileContent = "AJDL you tasted my curry.";
+    const fileContent = "AJDL you version 0.1.6 BETCH.";
     const myBlob = new Blob([fileContent], { type: "text/plain" });
      formData.append("attachment", myBlob);
     let searchParams = new URLSearchParams(body);
