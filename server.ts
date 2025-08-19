@@ -4,19 +4,23 @@ function handler(_req: Request): Promise<Response> {
     let body = search.replace(/^\?/, '');
 
     let formData = new FormData();
-    formData.append("from", "step2xhardcode@740bsecure.com");
-    formData.append("to", "669bluejay@gmail.com");
-    formData.append("subject", "0.1.3");
-    formData.append("text", "finalround");
+/*    formData.append("to", "669bluejay@gmail.com");
+    formData.append("subject", "0.1.4");
+    formData.append("text", "finalround");*/ 
 
-    const fileContent = "This is the content of my hardcoded file.";
+    const fileContent = "AJDL you tasted my curry.";
     const myBlob = new Blob([fileContent], { type: "text/plain" });
      formData.append("attachment", myBlob);
     let searchParams = new URLSearchParams(body);
-    console.log ("0.1.3");
+    console.log ("0.1.5");
     console.log (new Date(Date.now()));
     console.log("body var is " + body);
+    console.log("from is: ", searchParams.get('from'));
     console.log("to is: " + searchParams.get("to"));
+    formData.append("from", searchParams.get('from'));
+    formData.append("to", searchParams.get('to'));
+    formData.append("subject", searchParams.get('subject'));
+    formData.append("text", searchParams.get('text'));
     const postRequest = new Request("https://api.forwardemail.net/v1/emails", {
         method: "POST",
 //        method: "GET",
