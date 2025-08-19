@@ -2,14 +2,14 @@ function handler(_req: Request): Promise<Response> {
     let url = new URL(_req.url);
     let search = url.search;
     let body = search.replace(/^\?/, '');
-    console.log ("0.1.0");
+    console.log ("0.1.1");
     console.log (new Date(Date.now()));
     console.log("body var is " + body);
     const postRequest = new Request("https://api.forwardemail.net/v1/emails", {
         method: "POST",
 //        method: "GET",
         headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
+            "Content-Type": "multipart/form-data",
             "Authorization": "Basic OWRhOTZjZmI5OGU1ZWIxOWMwYjA0ODUxOg=="
 
         },
